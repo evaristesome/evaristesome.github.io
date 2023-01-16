@@ -71,14 +71,14 @@
             this a passband signal representation. A further way on writing (1) is <br><br>
             \(x(t) = \sqrt{2} x_{I}(t)\cos(2\pi f_{c}t) - \sqrt{2} x_{Q}(t)\sin(2\pi f_{c}t)\) <br><br>
             where \(x_{I}(t) = A(t)\cos(\phi(t))\) and \(x_Q (t) = A(t) \sin(\phi (t))\) are the in-phase and
-            quadrature components. Here we assume \(f_c \> W/2\), where W is the spectral support of \(x_Q (t)\)
+            quadrature components. Here we assume \(f_c > W/2\), where W is the spectral support of \(x_Q (t)\)
             and \(x_I (t)\). <br>
             It is possible to adopt another representation of the transmitted signals that suppress the dependence of
             the carrier frequency using complex numbers, call the baseband representation.
             The baseband representation of \(x(t)\) is <br><br>
             \(x_b (t)= x_I (t) + i x_Q (t)\) <br><br>
             Note that \(x(t)\) can be easily obtained back from \(x_b (t)\) by <br><br>
-            \(x(t) = \sqrt {2} \Re\{x_b (t) e^{(i2\pi f_c t)}\}\) <br>
+            \(x(t) = \sqrt {2} \Re\{x_b (t) e^{(i2\pi f_c t)}\}\)
 
             <br><br>
             In digital transmission systems with passband pulse amplitude modulation (PAM),
@@ -109,9 +109,9 @@
             This is achieved by an approach known as Gray mapping.<br>
             There are several metrics to evaluate the performance of a modulation format, one of them is the
             spectral efficiency \((SE)\). It is defined as the ratio between the conveyed net bit rate, \(R_b\),
-            and the bandwidth to support this rate, \(W\).<br>
+            and the bandwidth to support this rate, \(W\).<br><br>
             Receiver:
-            The most common channel is the additive with Gaussian noise (AWGN) channel for which the received
+            The most common channel is the additive white Gaussian noise (AWGN) channel for which the received
             signal \(r(t)\) is given by:<br><br>
             \( r(t)=x(t)+ \eta (t)\) <br><br>
             where \(\eta(t)\) is the white Gaussian noise with a power spectral density to \(N_0/2\)  over the entire
@@ -141,7 +141,7 @@
             assignment of symbols according to the constellation of a specific modulation format. Then, a
             shaping filter is used to generate pulses conveying the mapped symbols. This is all carried out in
             the digital domain, i.e., in a digital signal processing. Therefore, before transmitting the signal
-            over the channel, digital-to-analog $(DAC)$ converts are required to generate analog waveforms.
+            over the channel, digital-to-analog (DAC) converters are required to generate analog waveforms.
             Finally, these signals are sent to an optical modulator that converts the input analog electric
             signals into a modulated optical carrier.<br>
             In fiber optic communication systems, direct modulation is the simplest technique used to modulate an
@@ -154,7 +154,7 @@
             a) – Phase modulator<br>
             The phase modulator (PM) is a device that relies on the pockels effect to imprint variations in the
             phase of an optical carrier. Such a device is comprised of a waveguide, which is generally lithium
-            niobate \((LiNbO_3)\) surrounded by a pair of electrodes that enable the application of an electric
+            niobate \((LiNbO_{3})\) surrounded by a pair of electrodes that enable the application of an electric
             voltage.<br>
             b) – Mach-Zehnder modulator<br>
             The Mach-Zehnder modulator \((MZM)\) is a device that uses the principle of interference between
@@ -168,7 +168,7 @@
             c) – In-phase and quadrature modulator<br>
             The in-phase and quadrature modulator \((IQM)\) is a component that is capable of generating
             constellation symbols at any position in the complex plane. Its structure consists of a
-            combination of two \(MZM\) and one \(\pi/2\) \(PM\).<br>
+            combination of two \(MZM\) and one \(\pi/2\) PM.<br>
             d) – Dual polarization modulator<br>
             In addition to conveying information in the phase and amplitude of the optical signal, digital
             coherent optical systems also uses polarization as an additional degree of freedom.<br><br>
@@ -178,10 +178,11 @@
             Deskew: responsible for compensating for possible temporal mismatches in the alignment of the four received
             components.<br>
             Chromatic dispersion: different spectral components of a guided mode propagate with distinct group
-            velocities. If left compensated, chromatic dispersion broadens the propagating pulses and lead to
+            velocities gives rise to the phenomenon known as chromatic dispersion. If left uncompensated, chromatic dispersion broadens the propagating pulses and lead to
             inter-symbol interference \((ISI)\). In optical fiber, chromatic dispersion is generated by two main
             contributions. The first one, called material dispersion, is related to the material from which the fiber
-            is made. The second one is called waveguide dispersion.<br>
+            is made. The second one is called waveguide dispersion, arises from the fact that part of the energy
+            of the transmitted signal propagates in the fiber core, and another part in the fiber cladding.<br>
             Optical receiver: In optical receivers, the conversion of the optical signal into electric currents is
             performed by the photodetector.<br>
             Photodetectors: are optoelectronic devices that generate an electric current that is proportional to the
@@ -198,7 +199,7 @@
             recover the signal from the intermediate frequency \(\omega_{IF}\) to baseband.<br>
             Coherent optical systems implement an intradyne detector, for which
             \(\omega_{c} \approx \omega_{LO}\). In this case, downconversion from \(\omega_{IF} \approx 0\) to baseband is
-            carried out by frequency recovery algorithms implemented by DSP.<br><br>
+            carried out by frequency recovery algorithms implemented by DSP.<br>
 
             Deskew block compensates for a temporal misalignment between in-phase and quadrature components at the
             output of ADCs, called skew.<br><br>
