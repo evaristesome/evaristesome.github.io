@@ -102,7 +102,24 @@
             A widely used family of modulation formats that achieves excellent performance is the M-ary
             quadrature amplitude modulation (M-QAM). In M-QAM, \(\sqrt{M}\) amplitude levels of the in-phase and
             quadrature component are uniformly distributed and independently modulated. Usually, \(M=L^2\), and \(L\)
-             is a power of two. <br><br>
+             is a power of two. <br>
+            <center>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <th class="tg-0pky">  <img src="images/QPSK_ES.png" width="400" height="300"> </th>
+                        <th class="tg-0lax">  <img src="images/QPSK-AWGN_ES.png" width="400" height="300"> </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="tg-0pky">  <img src="images/QPSK-PhaseNoise_ES.png" width="400" height="300"> </td>
+                        <td class="tg-0lax">  <img src="images/QPSK-AWGN-PhaseNoise_ES.png" width="400" height="300"> </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </center>
+
             Another important issue is how to map bits into constellation symbols. It is desirable that adjacent
             symbols are mapped to code words that differ by a small number of bits, ideally only one.
             In this way, even if one symbol conveys \(m = \log (M)\) bits, most symbols errors cause only one bit error.
@@ -218,6 +235,28 @@
             the Gram-Schmidt orthogonalization procedure the most common in optical receivers.
 
             <br><br>
+            Orthogonal Frequency-Division Multiplexing (OFDM) <br>
+            OFDM subcarrier channel signals are orthogonal to one another
+                <ul>
+                    <li>Subcarrier frequencies are chosen so that the subcarriers are orthogonal to each other,</li>
+                    <li>at the center of each subcarrier, signals contribution from other subcarriers is zero</li>
+                    <li>crosstalk between the sub-channels is eliminated and inter-carrier guard bands are not required</li>
+                    <li>orthogonality requires that the subcarrier spacing is \(\Delta f = \frac {1}{T_{U}}\) Hertz, where \(T_{U}\) seconds is the useful symbol duration
+                    with N subcarriers, the total passband bandwidth will be \(B ≈ N·\Delta f\) (Hz) </li>
+                    <li>Orthogonality  allows high spectral efficiency. </li>
+                </ul>
+            <br>
+            <center>
+                <table class="tg">
+                    <thead>
+                      <tr>
+                        <td class="tg-0pky">  <img src="images/ofdm-16channel.png" width="800" height="400"> </td>
+                      </tr>
+                    </thead>
+                </table>
+            </center>
+
+            <br>
             Error correction for coherent optical communication<br>
             Forward Error Correction (FEC) coding is based on deterministically adding redundant bit to a source information
             bit sequence. After a transmission over a noisy channel, a decoding system tries to exploit the redundant
