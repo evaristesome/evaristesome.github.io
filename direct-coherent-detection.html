@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Evariste Somé's Homepage.">
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
+
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+	<link rel="stylesheet" href="css/layouts/pure-min.css">
+	<link rel="stylesheet" href="css/layouts/side-menu.css">
+
+</head>
+
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#">Navigation</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#home" class="pure-menu-link"><!--Coherent <br/> Optical System --></a></li>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>Direct and Coherent Detections</h1>
+        </div>
+
+        <div class="content">
+            <p>
+                 Direct detection uses the amplitude of the light to encode the information. The transmission distance
+                to achieve depends on the data rate of the signal that is used. At lower data rates, the link length can
+                achieve 100th of kilometers. However, as the data rate or the signal speed goes up, the link length
+                decrease exponentially.<br><br>
+                In coherent transmission, rather than using the amplitude to encode information, properties of the
+                light, such as phase and polarization. Consequently, this increase the data rate while still being able
+                to transmit over long distances.<br><br>
+                In direct detection, the laser on the transmitting side converts the electrical to optical On-Off
+                pulses and sends through the optical medium. The laser pulses are then received by the photodiode on
+                the receiving end, and converts back into electrical signals. As light pulses go through the fiber,
+                they get smeared out. Such phenomenon is called dispersion. At higher throughput, dispersion effects
+                become more problematic because pulses get closer together. As pulses start overlapping to each other,
+                it then becomes difficult, even impossible for the photodetector to correctly detect each individual
+                pulse at the received end.<br><br>
+                To overcome dispersion effect and increase transmission speed, an alternative approach is needed.
+                Apart from just using the amplitude or intensity to encode information, phase can be used by changing
+                the delay between pulses and the polarization, which is the orientation of the signal.
+                By combining amplitude, phase, and polarization changes, we can encode three bits in the same time span.
+                A coherent detection technique can be used to received the signal, which uses a local oscillator
+                to generate a reference signal and to compare with the incoming signal. Mixing the two signals
+                coherently, the amplitude and phase information per polarization can be reconstructed.
+                The reconstructed signals are fed into the digital signal processing algorithms to compensate any
+                transmission impairments such as dispersion.
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="js/ui.js"></script>
+
+</body>
+</html>
