@@ -51,8 +51,8 @@
             <p>
 
             <h2>Basic Properties of Electromagnetic Waves</h2>
-                    <p>Since the college, I, Evariste Some, struggled to understand Maxwell's Equations.
-                    I started getting to their deep meanings when I came to Telecommunication school and took additional EM course to discover the richness of these equations that govern the telecommunication world. I wanted to
+                    <p>Why I am writing about Maxwell's Equations while there are so many formal manuals: It is a way to repeat what I learned from the subject, and to make sure that I understood each expression used. <br>
+                    I started getting to Maxwell's Equations deep meanings when I came to the Telecommunication school and took additional EM course to discover the richness of these equations that govern the telecommunication world. I wanted to
                     put out a summary for anyone who wants to read and enjoy these equations that Maxwell had put together. It is not a complete guide, but will keep adding additional definitions. </p>
                     Electromagnetic waves properties establish the basic parameters and relationships which are used as standard background when considering problems in antennas and electromagnetic wave propagation. They are a great foundation of communication including wireless and satellite communications.
             <h3>Maxwell's Equations</h3>
@@ -73,7 +73,7 @@
                     \end{align}
                     where \(\vec{\textbf{E}}\) is the electric field, \(\vec{\textbf{B}}\) the magnetic field, \(\rho\) the charge density, \(\vec{\textbf{J}}\) is the current density, \(\epsilon_0\)  the permittivity in free space, \(\mu\) the permeability of the medium.
 
-                    <br> The above equations can be interpreted as follows [kathylovesphisycs]:<br>
+                    <br> The above equations can be interpreted as follows:<br>
 
 
                         <p>Equation [eq:GLE]: Divergence of electric field is equal to the number of charges density per volume. If there is a volume, with more positive charges than negative, the divergence of the electric field will be positive. If there are more negative than positive charges, then the divergence is negative. If the volume has equal amount of positive and negative charges, then the divergence is zero.</p>
@@ -81,7 +81,13 @@
                         <p>Equation [eq:FLEF]: The changing in a magnetic field will create an electric field that curls around the changing of magnetic field. To the negative sign meaning, the curling electric field is in a conductor. It will create its own circling current, which according to Ampere's law, will make its own curling  magnetic field. The negative sign means that the magnetic field from the current will push against the changing external magnetic field. If the negative sign was not there, you could not only build a perpetual motion machine, but build a perpetual motion machine that constantly accelerates.</p>
                         <p>Equation [eq:MAL]: The curl of a magnetic field is either due to the current the magnetic field is circling, or from a changing electric field that is inducing a perpendicular magnetic field around it. A circulating magnetic field is produced by an electric current, and by an electric field that changes with time.</p>
 
-
+                     <p>Lorentz Force Law:
+                         \begin{equation}
+                            \vec{\textbf{F}}_{EM} = q(\vec{\textbf{E}} + \vec{\textbf{v}} \times \vec{\textbf{B}})
+                        \end{equation}
+                         where \(\vec{\textbf{F}}_{EM}\) stands for electromagnetic force, \(q\) the test charge,
+                         \(\vec{\textbf{v}}\) the velocity of the test charge moving through the magnetic field, and \(\vec{\textbf{B}}\) the magnetic field.
+                     </p>
                     For free space:<br>
                     &emsp; Current density \((\vec{\textbf{J}}=0)\) <br>
                     &emsp; Volume charge distribution \((\rho)=0\)<br>
@@ -139,7 +145,16 @@
                         </center>
                     <br>
 
-                    \(\vec{\textbf{E}}\) and \(\vec{\textbf{B}}\) satisfy the same equation. However, it does not mean they are equal. \(\vec{\textbf{E}}\) and \(\vec{\textbf{B}}\) are always perpendicular to each other (Figure EM-waves). In Figure [fig:EM-waves] illustrations, the vectors of the two fields, electric and magnetic, are only shown at a few selected locations, equally spaced along a line. But the fields are defined at every point (x,y,z). Additional definitions on vectors, curl, and divergence can be found in the next section.<br>
+                    \(\vec{\textbf{E}}\) and \(\vec{\textbf{B}}\) satisfy the same equation. However, it does not mean
+                    they are equal. \(\vec{\textbf{E}}\) and \(\vec{\textbf{B}}\) are always perpendicular to each other
+                    (Figure EM-waves). In Figure [fig:EM-waves] illustrations, the vectors of the two fields, electric
+                    and magnetic, are only shown at a few selected locations, equally spaced along a line. But the
+                    fields are defined at every point (x,y,z). Additional definitions on vectors, curl, and divergence
+                    can be found in the next section.<br>
+
+                    <p>Proof \(\vec{\textbf{E}}\) and \(\vec{\textbf{B}}\) are orthogonal to the wave vector: <br>
+                        ... coming soon ...
+                    </p>
 
                     <h3>Complement: Vector, Divergence, Gradient, Curl</h3>
                             <p>Divergence, gradient and curl are vectors derivative that appear in Maxwell's equation. Their definitions and meaning are given in this section.</p>
@@ -170,7 +185,7 @@
                             \end{equation*}
                             The Laplacian is related to the curvature of a function.<br>
 
-                            <p>The "Curl" of a vector function $\vec{G}$:</p>
+                            <p>The "Curl" of a vector function \(\vec{G}\):</p>
                             \begin{equation*}
                                 \vec{\nabla}\times\vec{G} \equiv \begin{pmatrix}\frac{\partial G_{z}}{\partial y} - \frac{\partial G_{y}}{\partial z},\quad \frac{\partial G_{x}}{\partial z} - \frac{\partial G_{z}}{\partial x},\quad \frac{\partial G_{y}}{\partial x} - \frac{\partial G_{x}}{\partial y}\end{pmatrix}
                             \end{equation*}
