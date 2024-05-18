@@ -49,19 +49,84 @@
 
         <div class="content">
             <p>
-
             <h2>Sections to be developed</h2>
-            <li>Adaptive Array Signal Formulation</li>
+            <li>Array-element Signal Formulation</li>
             <li>Optimal Beamforming</li>
             <li>Beamforming and Direction of Arrival</li>
             <li>Capon Beamforming</li>
             <li>MUSIC</li>
             <li>ESPRIT</li>
             <h3>This work is in progress ...</h3>
-
             </p>
         </div>
-    </div>
+        <div class="content"><h2>Array-element Signal Formulation</h2>
+        <p>Antenna array signal processing is an actively developing research area in communication technologies and
+            connected to the progress in optimization theory, and remains the key technological development that
+            attracts more than one.<br>
+            Beamforming is a signal processing operation that uses antenna arrays to create a spatial filter. Beamforming
+            consists to filter out signals from all directions except the desired direction(s). Beamforming can be used
+            to increase SINR (signal-to-interference-plus-noise ratio) of desired signals, null out interferers, shape
+            beam patterns, or even transmit/receive multiple data streams at the same time and frequency (5G & 6G).<br>
+            Antenna arrays have a huge role in radar, where the goal is to detect and track targets.<br>
+            This module introduces the theory in narrowband array signal processing beamforming and direction of
+            arrival estimation algorithms and the basic principle of array signal processing techniques to further
+            understand its implementation process and applications.<br><br>
+
+            Assumptions of the signal mathematical model used in beamforming and DOA estimation algorithms:
+            <ul>
+                <li> Each array element is an ideal omnidirectional point source, and the inter-element spacing is less than or equal to half-a-wavelength</li>
+            <li> Signal sources are assumed to be in the far-field so that the signals impinging on the array can be regarded as a plane wave</li>
+            <li> Let us consider a uniform linear array (ULA) topology. Spacing between array elements are equal, e.g. evenly spaced array</li>
+            <li> The noise is zero-mean Gaussian white noise, and uncorrelated with the signal source</li>
+            <li> The effect of mutual coupling between array elements is assumed to be negligible, i.e., the different
+                element receives the same signal amplitude.</li>
+            </ul>
+            Consider a 1D element uniformly spaced array:<br>
+            <center>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                        <th class="tg-0pky">  <img src="images/doa.png" width="600" height="300"> </th>
+                            <figcaption>Fig.1 - ULA 1D</figcaption>
+                        </tr>
+                    </thead>
+                </table>
+            </center>
+            <br>
+            In Fig. 1, a signal is coming in from the right side (pure assumption). It is hitting the right-most element
+            first. Consider the signal received by the first array element as a reference signal, then the analytical expression
+            for the i−th signal received with respect to the reference array element is <br><br>
+            \( s_i (t) = m_i (t) e^{j2\pi f_c t},  i  =  0, ..., P-1\) <br><br>
+            where \(m_i (t)\) is the complex envelope of the \( i-th\) modulated signal, and \( f_c\) the carrier frequency.<br>
+
+            <br>The signal received by each array element has a certain delay relative to the origin of the coordinates.
+            The delay
+            between when the signal hits that first element and when it reaches the next element can be calculated by
+            forming the trigonometry problem formulated from Fig.1.
+            <center>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                        <th class="tg-0pky">  <img src="images/signal-travel-distance.png" width="600" height="300"> </th>
+                            <figcaption>Fig.2 - Delay trigonometry formulation based on Fig. 1</figcaption>
+                        </tr>
+                    </thead>
+                </table>
+            </center>
+
+            the delay time for the signal received at the i−th  array element is:<br><br>
+            \( cos(90 - \theta) = \frac{adjacent}{hypotenuse} = \frac{adjacent}{d}\) <br><br>
+            \( adjacent = d *  cos(90 - \theta) = d * sin(\theta)\) <br>
+            The adjacent is just a distance. Convert the adjacent-distance to a time is necessary by using the speed of light:
+            \( time_{elapsed} = d \sin(\theta) / c \). This equation applies between any adjacent elements of the array.<br><br>
+
+            The propagation delay of the received signal from reference array element to the \( m−th \) array element
+            can be expressed as <br> \( \tau_m (\theta_i) = \frac{d}{c} (m-1) sin(\theta_i),\) \( m=1, ..., M \) <br><br>
+            MORE TO COME SOON
+        </p>
+
+        </div>
+        </div>
 </div>
 
 <script src="js/ui.js"></script>
