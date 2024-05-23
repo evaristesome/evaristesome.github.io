@@ -67,7 +67,18 @@
             consists to filter out signals from all directions except the desired direction(s). Beamforming can be used
             to increase SINR (signal-to-interference-plus-noise ratio) of desired signals, null out interferers, shape
             beam patterns, or even transmit/receive multiple data streams at the same time and frequency (5G & 6G).<br>
-            Antenna arrays have a huge role in radar, where the goal is to detect and track targets.<br>
+            <center>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                        <th class="tg-0pky">  <img src="images/beamManagement.png" width="700" height="300"> </th>
+                            <figcaption>Fig.1 - Beamforming management - Case 5G</figcaption>
+                        </tr>
+                    </thead>
+                </table>
+            </center>
+
+            <br>Antenna arrays have a huge role in radar, where the goal is to detect and track targets.<br>
             This module introduces the theory in narrowband array signal processing beamforming and direction of
             arrival estimation algorithms and the basic principle of array signal processing techniques to further
             understand its implementation process and applications.<br><br>
@@ -87,13 +98,13 @@
                     <thead>
                         <tr>
                         <th class="tg-0pky">  <img src="images/doa.png" width="600" height="300"> </th>
-                            <figcaption>Fig.1 - ULA 1D</figcaption>
+                            <figcaption>Fig.2 - ULA 1D</figcaption>
                         </tr>
                     </thead>
                 </table>
             </center>
             <br>
-            In Fig. 1, a signal is coming in from the right side (pure assumption). It is hitting the right-most element
+            In Fig. 2, a signal is coming in from the right side (pure assumption). It is hitting the right-most element
             first. Consider the signal received by the first array element as a reference signal, then the analytical expression
             for the i−th signal received with respect to the reference array element is <br><br>
             \( s_i (t) = m_i (t) e^{j2\pi f_c t},  i  =  0, ..., P-1\) <br><br>
@@ -102,13 +113,13 @@
             <br>The signal received by each array element has a certain delay relative to the origin of the coordinates.
             The delay
             between when the signal hits that first element and when it reaches the next element can be calculated by
-            forming the trigonometry problem formulated from Fig.1.
+            forming the trigonometry problem formulated from Fig.2.
             <center>
                 <table class="tg">
                     <thead>
                         <tr>
                         <th class="tg-0pky">  <img src="images/signal-travel-distance.png" width="600" height="300"> </th>
-                            <figcaption>Fig.2 - Delay trigonometry formulation based on Fig. 1</figcaption>
+                            <figcaption>Fig.3 - Delay trigonometry formulation based on Fig. 1</figcaption>
                         </tr>
                     </thead>
                 </table>
