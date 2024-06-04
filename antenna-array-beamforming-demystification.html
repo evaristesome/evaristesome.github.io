@@ -106,8 +106,8 @@
             <br>
             In Fig. 2, a signal is coming in from the right side (pure assumption). It is hitting the right-most element
             first. Consider the signal received by the first array element as a reference signal, then the analytical expression
-            for the i−th signal received with respect to the reference array element is <br><br>
-            \( s_i (t) = m_i (t) e^{j2\pi f_c t},  i  =  0, ..., P-1\) <br><br>
+            for the i−th signal received with respect to the reference array element is <br><br> &emsp;&emsp;&emsp;
+            \( s_i (t) = m_i (t) e^{j2\pi f_c t},  i  =  0, ..., P-1\) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (Eq. 1)<br><br>
             where \(m_i (t)\) is the complex envelope of the \( i-th\) modulated signal, and \( f_c\) the carrier frequency.<br>
 
             <br>The signal received by each array element has a certain delay relative to the origin of the coordinates.
@@ -125,14 +125,46 @@
                 </table>
             </center>
 
-            the delay time for the signal received at the i−th  array element is:<br><br>
-            \( cos(90 - \theta) = \frac{adjacent}{hypotenuse} = \frac{adjacent}{d}\) <br><br>
+            the delay time for the signal received at the i−th  array element is:<br><br>&emsp;&emsp;&emsp;
+
+            \( cos(90 - \theta) = \frac{adjacent}{hypotenuse} = \frac{adjacent}{d}\) <br><br> &emsp;&emsp;&emsp;
+
             \( adjacent = d *  cos(90 - \theta) = d * sin(\theta)\) &emsp;&emsp;&emsp;Remember: <i>cos(a - b) = cos(a)cos(b) + sin(a)sin(b)</i><br>
             The adjacent is just a distance. Convert the adjacent-distance to a time is necessary by using the speed of light:
             \( time_{elapsed} = d \sin(\theta) / c \). This equation applies between any adjacent elements of the array.<br><br>
 
             The propagation delay of the received signal from reference array element to the \( m−th \) array element
-            can be expressed as <br> \( \tau_m (\theta_i) = \frac{d}{c} (m-1) sin(\theta_i),\) \( m=1, ..., M \) <br><br>
+            can be expressed as <br>&emsp;&emsp;&emsp; \( \tau_m (\theta_i) = \frac{d}{c} (m-1) sin(\theta_i)\)
+            &emsp;&emsp;&emsp;\( m=1, ..., M \) &emsp;&emsp;&emsp; (Eq. 2)<br><br>
+
+            According to (Eq. 1), the signal received at the \(m-th\) array element is the superposition of all signals
+            and can be expressed as:<br><br> &emsp;&emsp;&emsp;
+            \(x_m (t) = \sum_{i=0}^{P-1} m_i (t-\tau_m (\theta_i)) e^{j2\pi f_c (t-\tau_m (\theta_i))} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-a)
+            <br><br> where \(n_m (t)\) is the Gaussian noise signal received at the \(m-th\) array element having zero mean and variance \(\sigma^2\).
+            Recall that when you have a time shift, it is subtracted from the time argument. (Eq. 3-a) can be rewritten:<br><br>&emsp;&emsp;&emsp;
+            \(x_m (t) = \sum_{i=0}^{P-1} m_i (t-\tau_m (\theta_i)) &emsp;e^{j2\pi f_c t}&emsp;e^{-j2\pi f_c \tau_m (\theta_i)} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-b)<br><br>
+            Because the carrier component in the system does not affect the analysis, and the adaptive algorithm is
+            often carried out in the baseband or complex envelope, the carrier part in the above equation can be ignored.
+            The remaining can be expressed as:<br><br>&emsp;&emsp;&emsp;
+            \(x_m (t) = \sum_{i=0}^{P-1} m_i (t-\tau_m (\theta_i)) &emsp;e^{-j2\pi f_c \tau_m (\theta_i)} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-c)<br><br>
+
+            Since we consider a narrowband signal source located in the far-field, the bandwidth \(B\) of the signal satisfy the condition
+            \(B<< f_c \), and \(m_i (t)\) changes relatively slowy because the signal delay is \(\tau_m (\theta_i) << \frac{1}{B}\).
+            Therefore, the complex envelope of the signal can be approximated as \(m_i (t-\tau_m (\theta_i))\approx m_i (t)\)&emsp;&emsp;&emsp; <br><br>
+
+            &emsp;&emsp;&emsp;
+            \(x_m (t) = \sum_{i=0}^{P-1} m_i (t) &emsp;e^{-j2\pi f_c \tau_m (\theta_i)} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-d)<br><br>
+
+            A little detail:<br><br>&emsp;&emsp;&emsp;
+            \(k=\frac{2\pi f_c}{c}\)&emsp;&emsp;&emsp; \(f_c=\frac{kc}{2\pi}\)&emsp;&emsp;&emsp; where \(k\) is the free space wave number <br><br>
+            &emsp;&emsp;&emsp; Recall \( \tau_m (\theta_i) = \frac{d}{c} (m-1) sin(\theta_i)\) <br><br>
+            Replacing the above details into (Eq. 3.d) gives: <br><br>
+
+            &emsp;&emsp;&emsp;
+            \(x_m (t) = \sum_{i=0}^{P-1} m_i (t) &emsp;e^{-j(m-1)kd sin \theta_i} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-e)<br><br>
+
+
+
             MORE TO COME SOON
         </p>
 
