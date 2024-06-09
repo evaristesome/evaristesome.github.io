@@ -163,8 +163,50 @@
             &emsp;&emsp;&emsp;
             \(x_m (t) = \sum_{i=0}^{P-1} m_i (t) &emsp;e^{-j(m-1)kd sin \theta_i} + n_m (t) \) &emsp;&emsp;&emsp; (Eq. 3-e)<br><br>
 
-
-
+            At time <b>\(t\)</b>, the overall received signal can be expressed as:<br>
+            <p>
+            \begin{equation}
+                x(t) =
+                \begin{bmatrix}
+                    x_1 (t)\\x_2 (t)\\.\\x_M (t)
+                \end{bmatrix}
+                = Am (t) + n(t) &emsp;&emsp;&emsp; (Eq. 4-a)
+            \end{equation}
+            </p>
+            <br>
+            <p>
+            \begin{equation}
+                x(t) =
+                \begin{bmatrix}
+                    1 & 1 & ... & 1 \\
+                    e^{-jkd sin\theta_0} & e^{-jkd sin\theta_1} & ... & e^{-jkd sin\theta_{P-1}} \\
+                    . & . & . & .\\
+                    . & . & . & .\\
+                    . & . & . & .\\
+                    e^{-j(M-1)kd sin\theta_0} & e^{-j(M-1)kd sin\theta_1} & ... & e^{-j(M-1)kd sin\theta_{P-1}}
+                \end{bmatrix}
+                \begin{bmatrix}
+                    m_1 (t) \\
+                    m_2 (t) \\
+                    . \\
+                    . \\
+                    . \\
+                    m_p (t)
+                \end{bmatrix}
+                +
+                \begin{bmatrix}
+                    n_1 (t) \\
+                    n_2 (t) \\
+                    . \\
+                    . \\
+                    . \\
+                    n_M (t)
+                \end{bmatrix}
+                &emsp;&emsp;&emsp; (Eq. 4-b)
+            \end{equation}
+            </p>
+            <br>
+            where ... <br><br>
             MORE TO COME SOON
         </p>
 
