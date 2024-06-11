@@ -208,7 +208,7 @@
             <br>
 
             Hence, from Eq. 4-b, we can define:
-            <li>The direction matrix:</li>
+            <li>The direction matrix, a \(MxP\) matrix:</li>
                 &emsp;&emsp;&emsp;\(A = [a(\theta_0)&emsp; a(\theta_1)&emsp; ...&emsp; a(\theta_{P-1})]\)
 
             <li>The array response vector, the steering vector, or the direction vector for the \(i-th\) signal \(s_i (t)\):</li>
@@ -241,7 +241,7 @@
             <h3>Why beamforming? Beamforming is used to</h3>
             <li>compensate propagation loss and improve coverage</li>
             <li>improve spectrum utilization by spatial reuse.</li>
-            <p>Beamforming is to estimate the desired signal properties by adjusting the complex weights at each sensor
+            <p>RF Beamforming is to estimate the desired signal properties by adjusting the complex weights at each sensor
                 applied to the received signal which result in enhancement of desired signal and place nulls in the
                 direction of interference. Description will be made based on digital beamforming system.
 
@@ -257,12 +257,36 @@
                 </center>
                 <br><br>
 
-                <br><br>
-                <b>MORE TO COME SOON</b> ...I will take a break from antennas and work on an equalizer MMSE before coming back to antennas
-                applications such as digital beamforming...
+                <h3>Array processing objectives</h3>
+                    <li>Detection of signals</li>
+                    <li>Estimation of signal parameters, which includes direction of arrival</li>
+                    <li>Estimation of the received signal</li>
+                    <li>Tracking of signal source</li>
+                    <li>Always proceed to instrumentation calibration before any array operation</li>
+                    <br>
+                    In digital beamforming, each array element has a dedicated ADC. The received signals from each
+                    element are multiplied by the conjugates of the weights \(w_m\) and then summed. The weighted
+                    signals are added together to form the output signal. Using these weights, a weighted response can
+                    be defined. The weights are allowed to change, depending on the received data, to achieve a purpose.
+                    In addition, the signal at each element is corrupted by thermal noise modeled as additive white
+                    Gaussian noise. The output received signal is therefore given by
+                    \begin{equation}
+                        y(t) = w^H x(t) = \sum_{m=1}^{M} w_{m}^{*} x_m (t) &emsp;&emsp;&emsp; (Eq. 5)
+                    \end{equation}
+
+                    &emsp;&emsp;&emsp; where \(w^H = [w_0^*,&emsp; w_1^*,&emsp; ...,&emsp; w_{M-1}^*]\)
+
+                <br>
             </p>
         </div>
 
+        <div class="content"><h2>Optimal Beamforming</h2>
+            <h3>Minimum Mean Squared Error</h3>
+            <p>....
+                <br><br>
+                <b>MORE TO COME SOON</b> ...next will be optimal beamforming: equalizer MMSE ...
+            </p>
+        </div>
 
         </div>
 </div>
