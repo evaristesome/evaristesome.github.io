@@ -214,16 +214,56 @@
             <li>The array response vector, the steering vector, or the direction vector for the \(i-th\) signal \(s_i (t)\):</li>
             &emsp;&emsp;&emsp;\(a(\theta_i) = [1&emsp;e^{-j2\pi f_c \tau_1 (\theta_i)}&emsp;...&emsp;e^{-j2\pi f_c \tau_M (\theta_i)}]^T\) <br><br>
             &emsp;&emsp;&emsp;For instance: \(a(\theta_0) = [1&emsp;e^{-jkd sin \theta_0)}&emsp;...&emsp;e^{-j(M-1)kd sin \theta_0)}]^T\) <br>
-            &emsp;&emsp;&emsp;The array response vector is a function of the angle of arrival, individual element response,
-            the array &emsp;&emsp;&emsp;geometry and the signal frequency.
-            <li>The noise vector:</li>
+            &emsp;&emsp;&emsp;The array response vector, a 2D array, is a function of the angle of arrival, individual element response,
+            &emsp;&emsp;&emsp;the array geometry, and the signal frequency (Fig. 4). The first element of the steering vector is always 1,
+            &emsp;&emsp;&emsp;e.g. \(e^0 = 1\), and the rest are phase shifts relative to the first element. The steering vector is used in DOA.
+            <li>The noise vector on each antenna element:</li>
                 &emsp;&emsp;&emsp;\(n(t) = [n_1 (t)&emsp; n_2 (t)&emsp; ...&emsp; n_M (t)]^T\)
             <br><br>
-            <b>MORE TO COME SOON</b> ...I will take a break from antennas and work on an equalizer MMSE before coming back to antennas
-            applications such as digital beamforming...
+
+            <center>
+                <table class="tg">
+                    <thead>
+                        <tr>
+                        <th class="tg-0pky">  <img src="images/test-bed.png" width="700" height="400"> </th>
+                            <figcaption>Fig.4 - Digital beamforming system built with SDR - Highlight of the 2D antenna array</figcaption>
+                        </tr>
+                    </thead>
+                </table>
+            </center>
+            <br><br>
+
         </p>
 
         </div>
+
+        <div class="content"><h2>Beamforming</h2>
+            <h3>Why beamforming? Beamforming is used to</h3>
+            <li>compensate propagation loss and improve coverage</li>
+            <li>improve spectrum utilization by spatial reuse.</li>
+            <p>Beamforming is to estimate the desired signal properties by adjusting the complex weights at each sensor
+                applied to the received signal which result in enhancement of desired signal and place nulls in the
+                direction of interference. Description will be made based on digital beamforming system.
+
+                <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/digital-beamforming-system.png" width="700" height="500"> </th>
+                                <figcaption>Fig.5 - Digital beamforming system</figcaption>
+                            </tr>
+                        </thead>
+                    </table>
+                </center>
+                <br><br>
+
+                <br><br>
+                <b>MORE TO COME SOON</b> ...I will take a break from antennas and work on an equalizer MMSE before coming back to antennas
+                applications such as digital beamforming...
+            </p>
+        </div>
+
+
         </div>
 </div>
 
