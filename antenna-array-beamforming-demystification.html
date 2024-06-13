@@ -51,11 +51,8 @@
             <p>
             <h2>Sections to develop</h2>
             <li>Array-element Signal Formulation</li>
-            <li>Optimal Beamforming</li>
-            <li>Beamforming and Direction of Arrival</li>
-            <li>Capon Beamforming</li>
-            <li>MUSIC</li>
-            <li>ESPRIT</li>
+            <li>Optimal Beamforming: MMSE</li>
+            <li>Beamforming and Direction of Arrival: MUSIC</li>
             <h3>This work is in progress ...</h3>
             </p>
         </div>
@@ -281,11 +278,70 @@
         </div>
 
         <div class="content"><h2>Optimal Beamforming</h2>
+            In beamforming, the weight vector is computed by solving the optimization of the cost function.
+            The different cost functions corresponds to different criteria. Some of the most frequently used performance
+            criteria’s include minimum mean squared error (MMSE), maximum likelihood (ML). As the weights are iteratively
+            adjusted, the cost function becomes smaller and smaller. When the cost function is minimized, the performance
+            criterion is met and the algorithm is said to have converged.
             <h3>Minimum Mean Squared Error</h3>
-            <p>....
-                <br><br>
-                <b>MORE TO COME SOON</b> ...next will be optimal beamforming: equalizer MMSE ...
+            <p>Mean squared error refers to the mean squared difference between the beamformer output and the desired signal.
+                The MMSE algorithm minimizes the error with respect to a reference signal x(t). If the signal prior knowledge
+                is known, the receiver can generate a local reference signal which has a strong correlation with the desired
+                signal. The main idea of MMSE is to adjust the weight vector in real time, so that the mean squared error
+                between the array output signal and the reference signal can be minimized. <br><br>
+
+                From Eq. 4-a, the received signals is expressed as<br>
+                \begin{equation}
+                    y= Am + n = Hx + n &emsp;&emsp;&emsp; (Eq. 6)
+                \end{equation}
+                where \(m \in \mathbb{C}^{N_t \times 1} \) represent the input signal,
+                \(A \in \mathbb{C}^{N_r \times N_t} \) the channel response,
+                \(n \in \mathbb{C}^{N_r \times 1}\) the observation noise. Note that \(N_t\) and \(N_r\) are respectively the number
+                of transmitting and receiving antennas.<br><br>
+
+                Let's define the following:<br>
+                <li>Auto-correlation of \(x:\) \(R_{xx} = E[xx^H]\) </li>
+                <li>Auto-correlation of \(n:\) \(R_{nn} = E[nn^H]\)</li>
+                <li>Cross-correlation of \(x\) and \(n:\) \(R_{xn} = E[xn^H] = 0_{N_t \times N_r}\)</li>
+                <li>Cross-correlation of \(n\) and \(x:\) \(R_{nx} = E[nx^H] = 0_{N_r \times N_t}\)</li>
+                <br>
+                We seek to estimate \(x\): <br>
+                <li>\(\hat{x} =Wy= W Hx + Wn\)</li> and to minimize the error: <br>
+                <li>\(e = \hat{x} - x\).</li>
+                \(W\) is the estimator to be applied such that the pdf for the error \(e\) is independent of the data \(y\).<br><br>
+                General Orthogonality Principle:<br>
+                Goal: Find an estimator \(W\) such that the pdf for the error \(e\) is orthogonal to the data \(y\): \(E[ey^H]=0\).<br><br>
+
+                If the error \(e\) is statistically independent of the observed data \(y\), then there is nothing
+                further one can do with the observed data to determine the error, and therefore to reduce the error.
+                In this case, the estimator W(ꞏ) is optimal (i.e., it can’t be improved upon).<br>
+                The above applies not only to temporal data, but also to spatial data, volume data, and any other
+                multidimensional data (even "big" data!).<br><br>
+                A MMSE tries to minimize the mean square error (MSE) of the residual error \(e=\hat{x}-x\). <br>
+                Now, let's connect the above formulas:<br>
+
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;\(E[ey^H]=0\) <br>
+                    &emsp;&emsp;&emsp;&emsp;\(E[(\hat{x}-x)y^H]=0\) <br>
+                    &emsp;&emsp;&emsp;&emsp;\(E[(W_{MMSE}y-x)y^H]=0\) <br>
+                    &emsp;&emsp;&emsp;&emsp;\(E[W_{MMSE}yy^H-xy^H]=0\) &emsp;&emsp;&emsp; Let's say \(W_{MMSE}=W\), and Using Eq. 6, we have<br><br>
+                    &emsp;&emsp;&emsp;&emsp;\(E[W(Hx + n)(Hx + n)^H-x(Hx + n)^H]=0\)<br>
+                    &emsp;&emsp;&emsp;&emsp;\(E[W(Hxx^HH^H + Hxn^H + H^Hnx^H + nn^H) -xx^HH^H - xn^H]=0\)<br>
+                    &emsp;&emsp;&emsp;&emsp;\(WE[Hxx^HH^H] + WE[Hxn^H] + WE[H^Hnx^H] + WE[nn^H] -E[xx^HH^H] - E[xn^H]=0\)<br><br>
+                    &emsp;&emsp;&emsp;&emsp;\(WHR_{xx}H^H + WHR_{xn} + WH^HR_{nx} + WR_{nn} -R_{xx}H^H - R_{xn}=0\)<br>
+                    &emsp;&emsp;&emsp;&emsp;\(WHR_{xx}H^H + 0 + 0 + WR_{nn} - R_{xx}H^H - 0 =0\)<br><br>
+                    &emsp;&emsp;&emsp;&emsp;\(W(HR_{xx}H^H + R_{nn}) = R_{xx}H^H \)<br><br>
+
+                            \begin{equation}
+                                W_{MMSE} = R_{xx}H^H (HR_{xx}H^H + R_{nn})^{-1} &emsp;&emsp;&emsp; (Eq. 7)
+                            \end{equation}
+                    <br>
             </p>
+
+            <h3>MUltiple SIgnal Classification - MUSIC</h3>
+
+            <br><br>
+            <b>MORE TO COME SOON</b> ...next will be MUSIC ...
+
         </div>
 
         </div>
