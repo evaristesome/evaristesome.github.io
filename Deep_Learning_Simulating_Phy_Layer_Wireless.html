@@ -44,12 +44,55 @@
 
     <div id="main">
         <div class="header">
-            <h1>AI Deep Learning Simulating the Physical Layer of Wireless Communications</h1>
+            <h1>AI Deep Learning Simulating Wireless Communications</h1>
         </div>
 
         <div class="content">
             <p>
-            <h2>Coming Soon ...</h2>
+            <h2>SIMULATION 1: Gradient Computation</h2>
+            <p>
+                <h3>a) Setting up end-to-end communication system</h3>
+                    It is setting up a simple communication system that transmit bits modulated as QAM symbols over an AWGN
+                    channel. Transmit bits modulated as QAM symbols over an AWGN channel to make the constellation trainable.
+
+                    <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/QAM_AWGN.png" width="400" height="375"> </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </center>
+
+                <h3>b) Use of Stochastic Gradient Descent on the received QAM-AWGN</h3>
+                    It illustrates the constellation after applying the gradient application: Optimization of the
+                    constellation through Stochastic Gradient Descent using the optimizer Adam. The gradients can be
+                    applied to the trainable weights to update them.
+
+                    <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/QAM_After_SGD.png" width="500" height="450"> </th>
+                                <figcaption>Optimization of the constellation through SGD</figcaption>
+                            </tr>
+                        </thead>
+                    </table>
+                    </center>
+
+                <h3>c) Computing and Plotting the Evaluated Trained Model QAM-AWGN-SGD</h3>
+                    <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/QAM-AWGN_Evaluated-Trained-Model.png" width="500" height="450"> </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    </center>
+            </p>
+            <h2>Coming Soon More Simulations...</h2>
           <!--  <p align="justify">
 
             <br>The Telecommunications Act of 1996 is the first major overhaul of telecommunications law in almost 62 years.
