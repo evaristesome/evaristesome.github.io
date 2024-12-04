@@ -69,6 +69,40 @@
             <hr style="height:2px;border-width:1;color:gray;background-color:gray">
 
             <p>
+                <h4>Scalable 5G NR OFDM Numerology</h4>
+                5G NR supports multiple OFDM subcarrier spacing (SCS) to efficiently address 5G diverse spectrums,
+                deployments and services.<br>
+                <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/subcarrier-spacing.png" width="700" height="375"> </th>
+                                <figcaption>5G NR subcarrier-spacing</figcaption>
+                            </tr>
+                        </thead>
+                    </table>
+                </center>
+
+            </p>
+
+                <h4>Simulating Carrier Configuration using PHY channel Uplink PUSCH</h4>
+                The cyclic prefix length depends on the subcarrier spacing. When choosing larger subcarrier spacing,
+                let's see what happens:<br>
+                <center>
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                            <th class="tg-0pky">  <img src="images/subcarrier-spacing-cyclic-prefix.png" width="700" height="375"> </th>
+                                <figcaption>In 5G NR, cyclic prefix is a function of the subcarrier spacing</figcaption>
+                            </tr>
+                        </thead>
+                    </table>
+                </center>
+                The cyclic prefix has shrunk from 5.2us to 1.69us and the number of slots per frame has increased from 10 to 40.<br>
+
+            <hr style="height:2px;border-width:1;color:gray;background-color:gray">
+
+            <p>
                 <h4>Simulator Layers</h4>
                 <center>
                     <table class="tg">
